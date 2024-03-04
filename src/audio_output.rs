@@ -459,12 +459,14 @@ pub(crate) fn update_instance_states<T: Resource>(
 
 #[cfg(test)]
 mod test {
-    use super::*;
+    use super::{AudioInstance, AudioManager, AudioOutput, HashMap, AudioCommand, AudioChannel, AudioSource};
     use crate::channel::AudioControl;
     use crate::{Audio, AudioPlugin};
+    use bevy::app::App;
     use bevy::asset::{AssetId, AssetPlugin};
-    use bevy::prelude::*;
+    // use bevy::prelude::*;
     use bevy::utils::Uuid;
+    use bevy::prelude::{Assets, MinimalPlugins, Handle};
     use kira::manager::backend::mock::MockBackend;
     use kira::manager::AudioManagerSettings;
 
